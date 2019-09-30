@@ -1,0 +1,36 @@
+@charset "utf-8";
+.regbox {
+    width: 1280px;
+    background-color: #F4F4F4;
+}
+
+.regbox h2 {
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 25px;
+    text-indent: 6px;
+}
+
+.reg-box {
+    width: 480px;
+    margin-top: 60px;
+    margin-bottom: 88px;
+    box-sizing: content-box;
+}
+
+.reg-box form .radiobox label {
+    padding: 0;
+}
+
+.reg-box form .form-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.reg-box form .col-sm-offset-2 button {
+    width: 100%;
+    background-color: #DADADA;
+    height: 50px;
+}

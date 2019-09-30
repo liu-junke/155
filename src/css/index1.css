@@ -1,0 +1,188 @@
+@charset "utf-8";
+.slider1-box {
+    width: 1280px;
+    height: 50px;
+    background: red;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#slider1 {
+    position: relative;
+    width: 1170px;
+    height: 50px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#slider1>div {
+    position: absolute;
+    width: 4680px;
+}
+
+#slider1>div img {
+    float: left;
+    width: 1170px;
+}
+
+.slider1-box>span {
+    font-size: 3em;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+}
+
+.slider1-box>.prev1 {
+    position: absolute;
+    top: -5px;
+    left: 0px;
+}
+
+.slider1-box>.next1 {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+}
+
+.slider2-box {
+    width: 1280px;
+    height: 570px;
+    background: red;
+    position: relative;
+}
+
+#slider2 {
+    position: relative;
+    width: 1280px;
+    height: 570px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#slider2>div {
+    position: absolute;
+    width: 7680px;
+}
+
+#slider2>div img {
+    float: left;
+    /* width: 1170px; */
+}
+
+.slider2-box {
+    margin-bottom: 60px;
+}
+
+.slider2-box>span {
+    font-size: 3em;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+}
+
+.slider2-box>.prev2 {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    margin-top: -25px;
+}
+
+.slider2-box>.next2 {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    margin-top: -25px;
+}
+
+.slider2-box p {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    box-sizing: content-box;
+    margin-left: -67.5px;
+    z-index: 20;
+    font-size: 0;
+}
+
+.slider2-box p>a {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #D1D1D1;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.slider2-box p>a:hover {
+    background-color: #000;
+}
+
+.slider-new {
+    width: 1280px;
+    margin-bottom: 40px;
+}
+
+.classify {
+    width: 1280px;
+    height: 70px;
+    margin-bottom: 58px;
+}
+
+.classify ul {
+    height: 70px;
+}
+
+.classify ul li {
+    float: left;
+    width: 25%;
+}
+
+.classify ul li p {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.classify ul li p a {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    box-sizing: content-box;
+    margin-right: 10px;
+    padding: 5px 0;
+    border-bottom: 2px solid #dadada;
+}
+
+.classify ul li p a:hover {
+    color: gray;
+}
+
+.classify ul li .top-text {
+    margin-bottom: 30px;
+}
+
+.classify ul li .top-text {
+    text-align: center;
+}
+
+.classify ul li .text1 {
+    margin-left: 40px;
+}
+
+.recommend {
+    margin-bottom: 25px;
+    width: 1280px;
+}
+
+.recommend img {
+    margin-left: -18px;
+}
+
+.re-box {
+    width: 1280px;
+}
+
+.re-box img {
+    margin-bottom: 25px;
+}

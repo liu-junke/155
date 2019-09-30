@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/commen.css">
+    <link rel="stylesheet" href="../css/reset1.css">
+    <link rel="stylesheet" href="../css/carts.css">
+</head>
+
+<body>
+    <!-- 导航 -->
+    <div class="header center">
+        <ul>
+            <li class="head-1">
+                <input type="text">
+            </li>
+            <li class="separator"></li>
+            <li class="head-2">
+                <a href="#">门店购买</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-3">
+                <a href="#">联系客服</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-4">
+                <a href="#">站内信</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-5">
+                <a href="#">购物车</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-6">
+                <a href="#">收藏夹</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-7">
+                <a href="#"><span></span><i>账户</i></a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-8">
+                <a href="#">登录</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-9">
+                <a href="#">注册</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 头部 -->
+    <div class="hd center">
+        <ul class="left-nav">
+            <li class="logo">
+                <a href="#"><img src="../img/LOGO.gif" alt=""></a>
+            </li>
+            <li class="hd-list s-list">
+                <a href="#">女装 WOMEN</a>
+            </li>
+            <li class="hd-list s-list">
+                <a href="#">男装 MAN</a>
+            </li>
+            <li class="hd-list s-list">
+                <a href="#">童装 KIDS</a>
+            </li>
+            <li class="hd-list">
+                <a href="#">婴幼儿装 BABY</a>
+            </li>
+        </ul>
+        <ul class="right-nav">
+            <li class="s-list">
+                <a href="#">企业信息</a>
+            </li>
+            <li class="s-list">
+                <a href="#">网上购买指南</a>
+            </li>
+            <li class="s-list">
+                <a href="#">关注我们</a>
+            </li>
+            <li>
+                <a href="#">公告区</a>
+            </li>
+            <li class="s1-list">
+                <a href="#">店铺资料</a>
+            </li>
+            <li class="s2-list">
+                <a href="#">订阅电子快报</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--      **************** ************  购物车部分 ***********   *****************          -->
+    <section class="cartMain center">
+
+        <div class="cart-flow center">
+            <ul>
+                <li class="cart-1">
+                    <div>1</div>
+                    <span>查看购物车</span>
+                </li>
+                <li class="cart-1">
+                    <div>2</div>
+                    <span>订单确认</span>
+                </li>
+                <li class="cart-1">
+                    <div>3</div>
+                    <span>订单支付</span>
+                </li>
+            </ul>
+        </div>
+        <div class="cartMain_hd">
+            <ul class="order_lists cartTop">
+                <li class="list_chk">
+                    <!--所有商品全选-->
+                    <input type="checkbox" id="all" class="whole_check">
+                    <label for="all"></label> 全选
+                </li>
+                <li class="list_con">商品信息</li>
+                <li class="list_info">商品参数</li>
+                <li class="list_price">单价</li>
+                <li class="list_amount">数量</li>
+                <li class="list_sum">金额</li>
+                <li class="list_op">操作</li>
+            </ul>
+        </div>
+
+        <div class="cartBox">
+
+            <div class="order_content">
+                <!-- <ul class="order_lists">
+                    <li class="list_chk">
+                        <input type="checkbox" id="checkbox_2" class="son_check">
+                        <label for="checkbox_2"></label>
+                    </li>
+                    <li class="list_con">
+                        <div class="list_img">
+                            <a href="javascript:;"><img src="./images/1.png" alt=""></a>
+                        </div>
+                        <div class="list_text"><a href="javascript:;">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a></div>
+                    </li>
+                    <li class="list_info">
+                        <p>尺码：185/112C/XXL</p>
+                        <p>颜色：32 深米色</p>
+                    </li>
+                    <li class="list_price">
+                        <p class="price">￥980</p>
+                    </li>
+                    <li class="list_amount">
+                        <div class="amount_box">
+                            <a href="javascript:;" class="reduce reSty">-</a>
+                            <input type="text" value="1" class="sum">
+                            <a href="javascript:;" class="plus">+</a>
+                        </div>
+                    </li>
+                    <li class="list_sum">
+                        <p class="sum_price">￥980</p>
+                    </li>
+                    <li class="list_op">
+                        <p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+
+
+
+        <!--底部-->
+        <div class="bar-wrapper center">
+            <div class="bar-right">
+                <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
+                <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
+                <div class="calBtn"><a href="javascript:;">结算</a></div>
+            </div>
+        </div>
+    </section>
+    <section class="model_bg"></section>
+    <!-- <section class="my_model">
+        <p class="title">删除宝贝<span class="closeModel">X</span></p>
+        <p>您确认要删除该宝贝吗？</p>
+        <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
+    </section> -->
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="../js/carts.js"></script>
+
+
+    <!-- 尾部 -->
+    <div class="foot center">
+        <div class="top-foot">
+            <div class="foot-logo">
+                <a href="#"><img src="../img/footer_logo.gif" alt=""></a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">店铺资料</a>
+                </li>
+                <li>
+                    <a href="#">招聘信息</a>
+                </li>
+                <li>
+                    <a href="#">访问权限</a>
+                </li>
+                <li>
+                    <a href="#" class="foot-last">隐私权保护</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bot-foot center">
+            <div class="foot-text">
+                <span>迅销（中国）商贸有限公司 沪ICP备09003223号</span>
+                <img src="../img/national.png" alt="">
+                <a href="#">沪公网安备 31010402000957号</a>
+            </div>
+            <div class="imgrecord">
+                <a href="#"><img src="../img/record_1.gif" alt="" class="img-1"></a>
+                <a href="#"><img src="../img/record2.png" alt="" class="img-2"></a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function() {
+            var shop = cookie.get('shop');
+            if (shop) {
+                shop = JSON.parse(shop);
+                var idList = shop.map(elm => elm.id).join();
+                // console.log(idList);
+                $.ajax({
+                    type: "get",
+                    url: "../lib/shop.php",
+                    data: {
+                        'idList': idList
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        var tempstr = '';
+                        data.forEach(elm => {
+                            let pic = JSON.parse(elm.p_pic);
+                            var arr = shop.filter((val, i) => {
+                                return val.id == elm.p_id;
+                            });
+                            // console.log(arr);
+
+                            tempstr += `
+                            <ul class="order_lists">
+                    <li class="list_chk">
+                        <input type="checkbox" id="checkbox_2" class="son_check">
+                        <label for="checkbox_2"></label>
+                    </li>
+                    <li class="list_con">
+                        <div class="list_img">
+                            <a href="javascript:;"><img src="./images/1.png" alt=""></a>
+                        </div>
+                        <div class="list_text"><a href="javascript:;">${elm.p_title}</a></div>
+                    </li>
+                    <li class="list_info">
+                        <p>尺码：185/112C/XXL</p>
+                        <p>颜色：32 深米色</p>
+                    </li>
+                    <li class="list_price">
+                        <p class="price">￥${elm.p_sall}.00</p>
+                    </li>
+                    <li class="list_amount">
+                        <div class="amount_box">
+                            <a href="javascript:;" class="reduce reSty">-</a>
+                            <input type="text" value="${arr[0].num}" class="sum">
+                            <a href="javascript:;" class="plus">+</a>
+                        </div>
+                    </li>
+                    <li class="list_sum">
+                        <p class="sum_price">￥<span>${arr[0].num*elm.p_sall}</span>.00</p>
+                    </li>
+                    <li class="list_op">
+                        <p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+                    </li>
+                </ul>
+                                `;
+                            $('.order_content').on('click', '.reduce', function() {
+                                $(this).next()[0].value -= 1;
+                                $(this).parent().parent().siblings('.list_sum').children().children()[0].innerText -= elm.p_sall;
+
+                            });
+                            $('.order_content').on('click', '.plus', function() {
+                                $(this).prev()[0].value++;
+                                $(this).parent().parent().siblings('.list_sum').children().children()[0].innerText = $(this).prev()[0].value * elm.p_sall;
+
+                            });
+
+                        });
+                        $('.order_content').append(tempstr);
+
+
+                    }
+                });
+            }
+
+
+        });
+    </script>
+</body>
+
+</html>

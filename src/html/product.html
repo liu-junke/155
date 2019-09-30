@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/commen.css">
+    <link rel="stylesheet" href="../css/magn.css">
+    <script src="../js/public2.js"></script>
+    <!-- <script src="../js/product.js"></script> -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/cookie.js"></script>
+
+    <!-- <script>
+        window.onload = function() {
+            var small = $('.small'),
+                movebox = $('.movebox'),
+                big = $('.big'),
+                smallbox = $('.smallbox'),
+                smallerpic = $('.smallerpic'),
+                bigpic = $('.bigpic');
+            bigpic.src = '../img/1.jpg';
+            smallerpic.addEventListener('mouseover', function(ev) {
+                smallpic.src = ev.target.src;
+                bigpic1.src = smallpic.src;
+            });
+            small.addEventListener('mouseover', function() {
+                movebox.addClass('show');
+                big.addClass('show');
+
+                movebox.css({
+                    'width': 338 + 'px',
+                    'height': 338 + 'px'
+                });
+
+                small.addEventListener('mousemove', function(ev) {
+                    var top = ev.pageY - small.offset().top - (movebox.offset().height / 2);
+                    var left = ev.pageX - small.offset().left - (movebox.offset().width / 2);
+
+                    var ratio = 1.5;
+                    if (left <= 0) {
+                        left = 0;
+                    } else if (left > small.offset().width - movebox.offset().width) {
+                        left = small.offset().width - movebox.offset().width - 2;
+                    }
+
+                    if (top <= 0) {
+                        top = 0;
+                    } else if (top > small.offset().height - movebox.offset().height) {
+                        top = small.offset().height - movebox.offset().height - 2;
+                    }
+                    movebox.css({
+                        left: left + 'px',
+                        top: top + 'px'
+                    });
+                    bigpic.css({
+                        left: -left * ratio + 'px',
+                        top: -top * ratio + 'px',
+                    });
+                });
+            });
+
+            small.addEventListener('mouseout', function() {
+                movebox.removeClass('show');
+                big.removeClass('show');
+            });
+        }
+    </script> -->
+
+    <script>
+        $(function() {
+            let id = location.search.split('=')[1]; // 获得id
+            console.log(id);
+            $.ajax({
+                type: "get",
+                url: "../lib/getitem.php",
+                data: {
+                    id: id
+                },
+                dataType: "json",
+                success: function(data) {
+                    let pic = JSON.parse(data.p_pic);
+                    let tempstr = `
+                    <div class="details-left">
+            <div class="contanier">
+                <div class="thumbox">
+                    <div class="one smallbox"><img src="..${pic[0].src}" alt="" class="smallerpic" id="smallerpic1"></div>
+                    <div class="two smallbox"><img src="..${pic[1].src}" alt="" class="smallerpic" id="smallerpic1"></div>
+                    <div class="three smallbox"><img src="..${pic[2].src}" alt="" class="smallerpic" id="smallerpic1"></div>
+                    <div class="four smallbox"><img src="..${pic[3].src}" alt="" class="smallerpic" id="smallerpic1"></div>
+                    <div class="five smallbox"><img src="..${pic[4].src}" alt="" class="smallerpic" id="smallerpic1"></div>
+                </div>
+                <div class="outbox">
+                    <div class="small" id="small1">
+                        <img src="..${pic[0].src}" alt="" id="smallpic" class="smallpic1">
+                        <div class="movebox"></div>
+                    </div>
+                    <div class="big">
+                        <img src="..${pic[0].src}" alt="" class="bigpic" id="bigpic1">
+                    </div>
+                </div>
+            </div>
+            <div class='details-right'>
+                <div class="de-right1">${data.p_title}</div>
+                <div class="de-right2"><a href="#">初上市尺码范围: XS-XXXL</a></div>
+                <div class="de-right3">
+                    <span class="sall-price">¥${data.p_sall}.00</span>
+                    <span class="price">
+                        初上市价格：
+                        <span class="first-price">
+                            ¥${data.p_firstprice}.00
+                        </span>
+                    </span>
+                </div>
+                <div class="de-right4">活动：&nbsp;&nbsp;&nbsp;<span>国庆会员狂欢 全场包邮（门店急送除外)</span></div>
+                <div class="de-right5">颜色：32 深米色</div>
+                <div class="de-right6">尺码 :</div>
+                <div class="de-right7">
+                    <ul class="list">
+                        <li class="">150/76A/XS</li>
+                        <li class="">155/80A/S</li>
+                        <li class="">160/84A/M</li>
+                        <li class="">160/88A/L</li>
+                        <li class="">165/92A/XL</li>
+                        <li class="">170/100B/XXL</li>
+                        <li class="">175/108C/XXXL</li>
+                    </ul>
+                </div>
+                <div class="de-right8">
+                    <label for="">配送方式 ：<input type="radio"><span>&nbsp;快递配送</span></label>
+                    <label for=""> <input type="radio"><span>&nbsp;门店自提</span></label>
+                </div>
+                <div class="de-right9">
+                    <label>数量：</label>
+                    <div class="counter">
+                        <button class="counter-minus"></button>
+                        <input type="text" value="1" class="num">
+                        <button class="counter-plus"></button>
+                    </div>
+                    <span>库存充足</span>
+                </div>
+                <div class="de-right10">
+                    <a class="buy">立即购买</a>
+                    <a class="shoupcar add">添加至购物车</a>
+                </div>
+                <div class="de-right11">支持30天无理由退换货</div>
+            </div>
+        </div>
+                    `;
+                    $('.detailspt').on('mouseover', '.smallerpic', function(ev) {
+                        $(this).parent().parent().parent().children('.outbox').children('.small').children('#smallpic')[0].src = ev.target.src;
+                        $(this).parent().parent().parent().children('.outbox').find('.big').children('#bigpic1')[0].src = $(this).parent().parent().parent().children('.outbox').children('.small').children('#smallpic')[0].src;
+                    });
+                    $('.detailspt').on('mouseover', '.small', function(ev) {
+                        $(this).children('#smallpic').next().addClass('show');
+                        $(this).siblings().addClass('show');
+                        // console.log($(this).offset().width);
+                        $(this).children('#smallpic').next().css({
+                            'width': 338 + 'px',
+                            'height': 338 + 'px'
+                        });
+                        $('.detailspt').on('mousemove', '.small', function(ev) {
+                            var top = ev.pageY - $(this).offset().top - 169;
+                            var left = ev.pageX - $(this).offset().left - 169;
+                            var ratio = 1.5;
+                            if (left <= 0) {
+                                left = 0;
+                            } else if (left > 520 - 338) {
+                                left = 520 - 338 - 2;
+                            }
+
+                            if (top <= 0) {
+                                top = 0;
+                            } else if (top > 520 - 338) {
+                                top = 520 - 338 - 2;
+                            }
+                            $(this).children('#smallpic').next().css({
+                                left: left + 'px',
+                                top: top + 'px'
+                            });
+                            $(this).siblings().children('#bigpic1').css({
+                                left: -left * ratio + 'px',
+                                top: -top * ratio + 'px',
+                            });
+                        });
+                    });
+
+                    $('.detailspt').on('click', '.counter-minus', function(ev) {
+                        $(this).next()[0].value -= 1;
+                    });
+                    $('.detailspt').on('click', '.counter-plus', function(ev) {
+                        $(this).siblings('.num')[0].value++;
+                    });
+                    $('.detailspt').on('mouseout', '.small', function(ev) {
+                        $(this).children('#smallpic').next().removeClass('show');
+                        $(this).siblings().removeClass('show');
+                    });
+
+                    $('.detailspt').append(tempstr);
+                    $('.detailspt').on('click', '.add', function(ev) {
+                        addItem(data.p_id, data.p_sall, $(this).parent().prev().find('.counter').find('.num').val());
+                    });
+                    // console.log($('.detailspt').children().siblings('.details-right').find('.de-right10').find('.add'));
+                }
+            });
+
+            function addItem(id, price, num) {
+                var shop = cookie.get('shop'); //获取cookie
+                var product = {
+                    id: id,
+                    price: price,
+                    num: num
+                };
+                // console.log(id, price, num);
+                if (shop) {
+                    shop = JSON.parse(shop);
+                    if (shop.some(elm => elm.id == id)) {
+                        shop.forEach(elm => {
+                            elm.id == id ? elm.num = num : null;
+                        });
+                    } else {
+                        shop.push(product);
+                    }
+                } else {
+                    shop = [];
+                    shop.push(product);
+                    console.log(product);
+                }
+                cookie.set('shop', JSON.stringify(shop), 1);
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- 导航 -->
+    <div class="header center">
+        <ul>
+            <li class="head-1">
+                <input type="text">
+            </li>
+            <li class="separator"></li>
+            <li class="head-2">
+                <a href="#">门店购买</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-3">
+                <a href="#">联系客服</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-4">
+                <a href="#">站内信</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-5">
+                <a href="#">购物车</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-6">
+                <a href="#">收藏夹</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-7">
+                <a href="#"><span></span><i>账户</i></a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-8">
+                <a href="#">登录</a>
+            </li>
+            <li class="separator"></li>
+            <li class="head-9">
+                <a href="#">注册</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 头部 -->
+    <div class="hd center">
+        <ul class="left-nav">
+            <li class="logo">
+                <a href="#"><img src="../img/LOGO.gif" alt=""></a>
+            </li>
+            <li class="hd-list s-list">
+                <a href="#">女装 WOMEN</a>
+            </li>
+            <li class="hd-list s-list">
+                <a href="#">男装 MAN</a>
+            </li>
+            <li class="hd-list s-list">
+                <a href="#">童装 KIDS</a>
+            </li>
+            <li class="hd-list">
+                <a href="#">婴幼儿装 BABY</a>
+            </li>
+        </ul>
+        <ul class="right-nav" style="margin-top: 0px">
+            <li class="s-list">
+                <a href="#">企业信息</a>
+            </li>
+            <li class="s-list">
+                <a href="#">网上购买指南</a>
+            </li>
+            <li class="s-list">
+                <a href="#">关注我们</a>
+            </li>
+            <li>
+                <a href="#">公告区</a>
+            </li>
+            <li class="s1-list">
+                <a href="#">店铺资料</a>
+            </li>
+            <li class="s2-list">
+                <a href="#">订阅电子快报</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- 商品详情 -->
+    <div class="detailspt center"></div>
+
+
+
+    <!-- 尾部 -->
+    <div class="foot center">
+        <div class="top-foot">
+            <div class="foot-logo">
+                <a href="#"><img src="../img/footer_logo.gif" alt=""></a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">店铺资料</a>
+                </li>
+                <li>
+                    <a href="#">招聘信息</a>
+                </li>
+                <li>
+                    <a href="#">访问权限</a>
+                </li>
+                <li>
+                    <a href="#" class="foot-last">隐私权保护</a>
+                </li>
+            </ul>
+        </div>
+        <div class="bot-foot center">
+            <div class="foot-text">
+                <span>迅销（中国）商贸有限公司 沪ICP备09003223号</span>
+                <img src="../img/national.png" alt="">
+                <a href="#">沪公网安备 31010402000957号</a>
+            </div>
+            <div class="imgrecord">
+                <a href="#"><img src="../img/record_1.gif" alt="" class="img-1"></a>
+                <a href="#"><img src="../img/record2.png" alt="" class="img-2"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
